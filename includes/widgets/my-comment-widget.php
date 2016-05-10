@@ -2,8 +2,8 @@
 // =============================== My Recent Comments Widget ====================================== //
 class MY_CommentWidget extends WP_Widget_Recent_Comments {
 
-	function MY_CommentWidget() {
-		parent::WP_Widget('my-recent-comments', $name = theme_locals("recent_comments"));
+	public function __construct() {
+		parent::__construct('my-recent-comments', $name = theme_locals("recent_comments"));
 	}
 	
 	function widget( $args, $instance ) {

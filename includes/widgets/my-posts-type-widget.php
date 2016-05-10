@@ -3,10 +3,10 @@
 // =============================== My advanced cycle widget ======================================*/
 class MY_PostsTypeWidget extends WP_Widget {
 
-function MY_PostsTypeWidget() {
+public function __construct() {
 	$widget_ops = array('classname' => 'my_posts_type_widget', 'description' => theme_locals("advanced_cycle_desc"));
 	$control_ops = array('width' => 500, 'height' => 350);
-	parent::WP_Widget(false, theme_locals("advanced_cycle"), $widget_ops, $control_ops);
+	parent::__construct(false, theme_locals("advanced_cycle"), $widget_ops, $control_ops);
 }
 
 /**

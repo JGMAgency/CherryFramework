@@ -2,8 +2,8 @@
 // =============================== My Flickr widget  ======================================
 class MY_FlickrWidget extends WP_Widget {
 	/* constructor */
-	function MY_FlickrWidget() {
-		parent::WP_Widget(false, $name = theme_locals("flickr"));
+	public function __construct() {
+		parent::__construct(false, $name = theme_locals("flickr"));
 	}
 
 	/** @see WP_Widget::widget */

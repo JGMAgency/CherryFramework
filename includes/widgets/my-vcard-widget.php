@@ -1,9 +1,9 @@
 <?php
 
 class MY_Vcard_Widget extends WP_Widget {
-	function MY_Vcard_Widget() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'widget_cherry_vcard', 'description' => theme_locals("vCard_desc"));
-		$this->WP_Widget('widget_cherry_vcard', theme_locals("vCard_name"), $widget_ops);
+		parent::__construct('widget_cherry_vcard', theme_locals("vCard_name"), $widget_ops);
 		$this->alt_option_name = 'widget_cherry_vcard';
 
 		add_action('save_post', array(&$this, 'flush_widget_cache'));

@@ -8,13 +8,13 @@ function ad_125_125_load_widgets()
 
 class Ad_125_125_Widget extends WP_Widget {
   
-  function Ad_125_125_Widget()
+  public function __construct()
   {
 	$widget_ops = array('classname' => 'ad_125_125', 'description' => theme_locals("add_125_125"));
 
 	$control_ops = array('id_base' => 'ad_125_125-widget');
 
-	$this->WP_Widget('ad_125_125-widget', theme_locals("add_125_125_desc"), $widget_ops, $control_ops);
+	parent::__construct('ad_125_125-widget', theme_locals("add_125_125_desc"), $widget_ops, $control_ops);
   }
   
   function widget($args, $instance)

@@ -2,9 +2,9 @@
 // =============================== My Social Networks Widget ====================================== //
 class My_SocialNetworksWidget extends WP_Widget {
 
-	function My_SocialNetworksWidget() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'social_networks_widget', 'description' => theme_locals("social_networks_desc"));
-		$this->WP_Widget('social_networks', theme_locals("social_networks"), $widget_ops);
+		parent::__construct('social_networks', theme_locals("social_networks"), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {

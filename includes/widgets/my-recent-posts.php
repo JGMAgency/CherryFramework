@@ -2,8 +2,8 @@
 // =============================== My Recent Posts (News widget) ======================================
 class MY_PostWidget extends WP_Widget {
 	/** constructor */
-	function MY_PostWidget() {
-		parent::WP_Widget(false, $name = theme_locals("recent_posts"));
+	public function __construct() {
+		parent::__construct(false, $name = theme_locals("recent_posts"));
 	}
 
 	/** @see WP_Widget::widget */
