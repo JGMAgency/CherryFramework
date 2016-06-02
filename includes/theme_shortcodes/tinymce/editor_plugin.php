@@ -3,8 +3,15 @@ header("Content-Type:text/javascript");
 
 //Setup URL to WordPress
 $absolute_path = __FILE__;
-$path_to_wp = explode( 'wp-content', $absolute_path );
-$wp_url = $path_to_wp[0];
+if (strpos($absolute_path, 'wp-content') !== false) {
+	$path_to_wp = explode( 'wp-content', $absolute_path );
+	$wp_url = $path_to_wp[0];
+
+} elseif (strpos($absolute_path, 'web/app') !== false) {
+    // Bedrock format
+	$path_to_wp = explode( 'app', $absolute_path );
+	$wp_url = $path_to_wp[0] . 'wp/';
+}
 
 //Access WordPress
 require_once( $wp_url.'/wp-load.php' );
